@@ -1,0 +1,82 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+html, body, #app-main {
+    height: 100%;
+}
+
+.bgrey {
+  background-color: #eaeaea;
+}
+
+.content {
+  margin-top: 50px;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.ov-auto {
+  overflow: auto;
+}
+
+.user-item, .note-item {
+  h5, p {
+    margin-top: 0;
+    word-wrap: break-word;
+  }
+  h5 {
+    font-weight: bold;
+  }
+  .inner {
+    height: 200px;
+    overflow: hidden;
+    padding: 15px;
+    border: 3px solid #eaeaea;
+    border-radius: 6px;
+  }
+  margin-bottom: 15px;
+}
+
+.p15 {
+ padding: 15px;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}
+
+.tc {
+  text-align: center;
+}
+
+.ptb15 {
+  padding: 15px 0;
+}
+
+.err-msg-wrp {
+  width: 100%;
+  margin-bottom: 15px;
+  overflow: auto;
+  ul {
+    li{
+      background-color: #ff4253;
+      color: white;
+    }
+  }
+}
+
+.coba-load {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 15px;
+  h3 {
+    margin: 0;
+    flex: 1;
+    margin-right: 15px;
+  }
+}

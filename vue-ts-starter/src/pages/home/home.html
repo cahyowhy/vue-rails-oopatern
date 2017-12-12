@@ -1,0 +1,82 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-sm-12 content mb15 ov-auto p15">
+      <div class="coba-load">
+        <h3>Berikut data user</h3>
+        <a @click="onLoadUser" class="btn btn-primary">LOAD USER</a>
+      </div>
+      <div v-for="user in users"
+           :key="user.id"
+           class="col-sm-4 user-item">
+        <div class="inner">
+          <h5>{{user.name}}</h5>
+          <p>{{user.username}}</p>
+          <p>{{user.formatedUserIntro()}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 content mb15 ov-auto p15">
+      <div class="coba-load">
+        <h3>Berikut data note</h3>
+        <a @click="onLoadNote" class="btn btn-primary">LOAD NOTE</a>
+      </div>
+      <div v-for="note in notes"
+           :key="note.id"
+           class="col-sm-4 user-item">
+        <div class="inner">
+          <h5>{{note.title}}</h5>
+          <p>{{note.description}}</p>
+          <p>{{note.formatedNoteIntro()}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="errorMessagesUser.length > 0" class="err-msg-wrp">
+      <p><strong>Ada yang salah</strong></p>
+      <ul class="list-group" v-for="message in errorMessagesUser" :key="message">
+        <li class="list-group-item">{{message}}</li>
+      </ul>
+    </div>
+
+    <div class="content col-sm-12">
+      <div class="p15 width100 ov-auto bgrey mb15">
+        <h4>FORM USER</h4>
+
+        <div class="ov-auto width100">
+          <input class="form-control mb15" type="text" v-model="user.username" placeholder="username">
+          <input class="form-control mb15" type="text" v-model="user.name" placeholder="name">
+          <input class="form-control mb15" type="text" v-model="user.birth_date" placeholder="masukkan tanggal yyyy/mm/dd">
+        </div>
+
+        <div class="width100 ov-auto tc ptb15">
+          <a class="btn btn-primary" @click="doSaveUser">SIMPAN USER SADJA</a>
+        </div>
+      </div>
+
+      <div v-if="errorMessagesNote.length > 0" class="err-msg-wrp">
+        <p><strong>Ada yang salah</strong></p>
+        <ul class="list-group" v-for="message in errorMessagesNote" :key="message">
+          <li class="list-group-item">{{message}}</li>
+        </ul>
+      </div>
+
+      <div class="p15 width100 ov-auto bgrey mb15">
+        <h4>FORM NOTE</h4>
+
+        <div class="ov-auto width100">
+          <input class="form-control mb15" type="text" v-model="note.title" placeholder="title">
+          <textarea class="form-control mb15" type="text" v-model="note.description" placeholder="description"></textarea>
+        </div>
+
+        <div class="width100 ov-auto tc ptb15">
+          <a class="btn btn-primary" @click="doSaveNote">SIMPAN NOTE SADJA</a>
+        </div>
+      </div>
+
+      <div class="width100 ov-auto tc ptb15">
+        <a class="btn btn-primary" @click="doSave">SIMPAN SEMUA</a>
+      </div>
+    </div>
+  </div>
+</div>
